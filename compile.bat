@@ -1,0 +1,1 @@
+javac -classpath "c:\java\Magento\lib\selenium-java-client-driver.jar; c:\java\Magento\lib\junit.jar" src/Login.java

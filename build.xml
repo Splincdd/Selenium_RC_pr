@@ -1,0 +1,53 @@
+<project name="Magento" default="Login" basedir=".">
+    <description>
+        This class is used to test runing junit in ant task.
+    </description>
+	
+	<property name="main.src" value="src"/>
+	       <property name="build.dir" value="build"/>
+	       <property name="build.reports" value="build/report"/>
+	       <property name="build.classes" value="${build.dir}/classes"/>
+	       <property name="build.lib" value="${basedir}/lib"/>
+	       <property name="reports.dir" value="reports"/>
+	       <property name="classpath" value="${build.lib}/selenium-java-client-driver.jar; ${build.lib}/junit.jar" />
+  
+  
+	
+	
+ 
+    <target name="compile" >
+    	<echo> "${classpath}" </echo>
+       <mkdir dir="${build.classes}"/>
+       <javac destdir="${build.classes}" debug="true" optimize="true" deprecation="false" failonerror="true" classpath="${classpath}">
+       <src path="${main.src}"/>
+       </javac>
+    </target>
+ 
+    <target name="Login" depends="compile">
+       <mkdir dir="${build.reports}"/>
+       <junit fork="yes" forkmode="once" haltonfailure="no" showoutput="no" printsummary="yes">
+         <formatter type="xml"/>
+         <classpath>
+         	 <pathelement location="${build.classes}"/>
+         	 <pathelement path="${classpath}"/>
+         </classpath>
+       	
+        
+       	<batchtest todir="${build.reports}">
+            <fileset dir="src">
+               <include name="Login.java"/>
+            </fileset>
+          </batchtest>
+       </junit>
+       <junitreport todir="${build.reports}">
+         <fileset dir="${build.reports}">
+         <include name="TEST-*.xml"/>
+           </fileset>
+         <report format="frames" todir="${reports.dir}/junit_reports"/>
+       </junitreport>
+    </target>
+ 
+   </project>
+
+
+
