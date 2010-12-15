@@ -50,7 +50,7 @@ public void tearDown() throws Exception {
 		selenium.open("/");
 	
 	
-	selenium.type("q1", "Best Test");
+	selenium.type("q12", "Best Test");
 	selenium.click("//btnG");
 	
 
