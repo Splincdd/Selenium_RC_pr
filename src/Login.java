@@ -54,7 +54,7 @@ public void tearDown() throws Exception {
 	selenium.click("//btnG");
 	
 
-	selenium.type("212", "Best Test");
+	selenium.type("213", "Best Test");
 	selenium.click("//btnG");
 	}
 }
