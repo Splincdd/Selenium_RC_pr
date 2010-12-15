@@ -45,6 +45,15 @@ public void tearDown() throws Exception {
 	selenium.click("//btnG");
 	
 	}
+
+	public void test3() throws Exception {
+		selenium.open("/");
+	
+	
+	selenium.type("q", "Best Test");
+	selenium.click("//btnG");
+	
+	}
 }
 
 

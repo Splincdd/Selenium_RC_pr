@@ -1,4 +1,4 @@
-<project name="Magento" default="Login" basedir=".">
+<project name="Selenium_RC_pr" default="Login" basedir=".">
     <description>
         This class is used to test runing junit in ant task.
     </description>
